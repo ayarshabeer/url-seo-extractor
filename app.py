@@ -66,6 +66,8 @@ class WebScraper:
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--disable-infobars")
         chrome_options.add_argument("--disable-notifications")
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+        chrome_options.add_argument("--disable-extensions")
 
         if self.config.use_proxy and self.config.proxy:
             chrome_options.add_argument(f"--proxy-server={self.config.proxy}")
@@ -342,4 +344,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
